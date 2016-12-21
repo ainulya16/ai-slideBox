@@ -1,0 +1,380 @@
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #009689 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #f35429 !default;
+$energized:                       #35b8ba !default;
+$assertive:                       #ef473a !default;
+$royal:                           #440b11 !default;
+$dark:                            #444 !default;
+
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+
+//////////////////////////////  ELEMENT ///////////////////////////////////////////
+
+body, input, textarea, h1, h2, h3, h4, h5, h6, p, a, button:not(.button-icon) {
+    
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: 'exo_2regular',sans-serif !important;
+    /* 1 */
+    -webkit-text-size-adjust: none;
+    -ms-text-size-adjust: none;
+    /* 2 */
+    -webkit-text-size-adjust: none;
+    /* 2 */ }
+input{font-size: 1.1em!important;}
+input[disabled], textarea[disabled]{background-color: $light!important;}
+textarea{
+    min-height: 34px !important;
+    -webkit-user-select: auto !important;
+    line-height: 1em!important;
+    overflow: hidden;
+    resize: none;
+    font-size: 1.1em !important;
+    font-weight: 500 !important;
+    -webkit-user-select: auto !important;
+}
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+/*////////////////////////////  NAV BAR  /////////////////////////////////////////////////*/
+.bar {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: 9;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    height: 46px;
+    background-size: 0; }
+.platform-android .bar .title {
+    letter-spacing: 0.05em;
+    text-transform: capitalize !important;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    margin: 0;
+    min-width: 30px;
+    height: 46px;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-transform: uppercase !important;
+    white-space: nowrap;
+    font-weight:700;
+    font-size: 1.1em;
+    line-height: 46px; }
+
+/*////////////////////////////  BUTTON  /////////////////////////////////////////////////*/
+.button-bar .button{
+    white-space: nowrap; font-size: 1em; border:0px;
+    border-radius: 0px!important; -webkit-border-radius: 0px; margin: 0px; padding: 0px; }
+
+.button{line-height: 1;}
+
+.fixed-outside{
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+    text-align:center;
+    z-index: 9999;}
+
+.fixed-outside .button{
+    width: 28vw;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: bolder;
+    letter-spacing: 0.07em;
+    margin-right: 2vw;}
+
+
+.button-circle {
+    padding: 0px;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+
+/*////////////////////////////  BACKGROUND  /////////////////////////////////////////////////*/
+.background-gradient {  background: linear-gradient(to bottom,#fff, #f4f4f4) !important; }
+.background-positive {	background-color: $positive !important; }
+.background-light   {	background-color: $light !important; }
+.background-stable {	background-color: $stable !important; }
+.gradient-black-transparent{
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.9+100 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.9) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#e6000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+/*////////////////////////////  FONT  /////////////////////////////////////////////////*/
+.font-100{font-weight: 100 !important;}
+.font-200{font-weight: 200 !important;}
+.font-300{font-weight: 300 !important;}
+.font-400{font-weight: 400 !important;}
+.font-500{font-weight: 500 !important;}
+.font-600{font-weight: 600 !important;}
+.font-700{font-weight: 700 !important;}
+.font-800{font-weight: 800 !important;}
+.font-900{font-weight: 900 !important;}
+.font-bold{font-weight: bold !important;}
+.font-bolder{font-weight: bolder !important;}
+
+.font-10{font-size:1.0em !important;}
+.font-11{font-size:1.1em !important;}
+.font-12{font-size:1.2em !important;}
+.font-13{font-size:1.3em !important;}
+.font-14{font-size:1.4em !important;}
+.font-15{font-size:1.5em !important;}
+
+.capitalize {    text-transform: capitalize!important;}
+.letter-spacing{  letter-spacing: 0.05em!important;}
+
+/*////////////////////////////  PADDING BORDER MARGIN  /////////////////////////////////////////////////*/
+
+.no-padding-horizontal{padding-left: 0; padding-right: 0;}
+.no-padding{  padding: 0px;}
+.no-margin{  margin: 0px;}
+.no-border{border: 0px!important;}
+.no-border-radius{border-radius: 0px !important;}
+.no-border-top{border-top: 0px!important;}
+.no-border-bottom{border-bottom: 0px!important;}
+.no-border-right-left{border-right: 0px!important;border-left: 0px!important;}
+
+.padding-horizontal-10{padding-left: 10%; padding-right: 10%;}
+
+.border-left-positive{border-left: 3px $positive solid!important;}
+.border-bottom-positive{border-bottom: 2px $positive solid;}
+.border-bottom-light{    border-bottom: 2px $light solid;}
+
+.border-radius-5{border-radius: 5px 5px 5px 5px!important;}
+
+.margin-left-10{margin-left:10px!important;}
+.margin-right-10{margin-right:10px!important;}
+.margin-bottom-10{margin-bottom:10px!important;}
+/*////////////////////////////  SHADOW AND TRANSITION  /////////////////////////////////////////////////*/
+.transition{ 
+    transition: 0.15s all linear;
+    -moz-transition: 0.15s all linear;
+    -webkit-transition: 0.15 all linear;
+}
+
+.shadow{   
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  	-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	  box-shadow: 0 1px 3px rgba(0,0,0,0.2);}
+
+#shadow{   
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	  -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+	  box-shadow: 0 1px 3px rgba(0,0,0,0.2);}
+
+#shadowInset{
+    -moz-box-shadow:    inset 0 8px 6px -6px #3d3d3d;
+    -webkit-box-shadow: inset 0 8px 6px -6px #3d3d3d;
+    box-shadow:         inset 0 8px 6px -6px #3d3d3d;}
+
+.shadowInset{      
+    -moz-box-shadow:    inset 0 0px 16px -6px #3d3d3d;
+    -webkit-box-shadow: inset 0 0px 16px -6px #3d3d3d;
+    box-shadow:         inset 0 0px 16px -6px #3d3d3d;}
+
+#shadowInsetBottom{      
+    -moz-box-shadow:    inset 0 -5px 6px -6px #3d3d3d;
+    -webkit-box-shadow: inset 0 -5px 6px -6px #3d3d3d;
+    box-shadow:         inset 0 -5px 6px -6px #3d3d3d;}
+
+.shadowInsetBottom{      
+    -moz-box-shadow:    inset 0 -5px 6px -6px #3d3d3d;
+    -webkit-box-shadow: inset 0 -5px 6px -6px #3d3d3d;
+    box-shadow:         inset 0 -5px 6px -6px #3d3d3d;}
+
+/*////////////////////////////  MY CUSTOM ANIMATION  /////////////////////////////////////////////////*/
+.myAnimation.ng-enter-stagger, .myAnimation.ng-leave-stagger, .repeat-animation.ng-move-stagger {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+    -webkit-transition-duration: 0;
+    transition-duration: 0;
+}
+
+.myAnimation.ng-enter {
+    -webkit-transition:0.2s linear all;
+    transition:0.2s linear all;
+    opacity: 0;
+    -webkit-transform:scale(1.15)!important;
+    transform:scale(1.15)!important;
+}
+.myAnimation.ng-enter.ng-enter-active {
+    opacity: 1;
+    -webkit-transform:scale(1)!important;
+    transform:scale(1)!important;
+}
+
+.myAnimation.ng-leave {
+    -webkit-transition:0.1s linear all;
+    transition:0.1s linear all;
+    opacity: 1;
+}
+.myAnimation.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+/*////////////////////////////  MY SEARCH BAR  /////////////////////////////////////////////////*/
+.searchBar {
+    color: #fff;
+    margin: 0 !important;
+    padding: 0;
+}
+
+.searchBar .searchTxt {
+    border-bottom: 1px solid $positive;
+    left: 50px;
+    width: calc(100% - 100px);
+    position: fixed;
+  	height: calc(100% - 10px);
+    padding-right: 10px;
+    padding-left: 10px;
+    background-color: $light;
+    font-size: 1.3em;
+}
+
+.searchBar input.searchTxt::-webkit-input-placeholder {   }
+.searchBar .searchTxt.ng-hide-remove     {     -webkit-animation:0.1s fadeInDown ease;     animation:0.1s fadeInDown ease; }
+.searchBar .searchTxt.ng-hide-add     { -webkit-animation:0.1s fadeOutUp ease; animation:0.1s fadeOutUp ease;}
+.searchBar.numicons2 .searchTxt {	width: calc(100% - 135px);}
+
+/*////////////////////////////  ACTION SHEET  /////////////////////////////////////////////////*/
+.platform-android .action-sheet-backdrop.active {
+    background-color: rgba(0, 0, 0, 0.2); 
+}
+.platform-android .action-sheet {
+    margin: 0; 
+
+}
+.platform-android .action-sheet-has-icons .icon {
+  position: absolute;
+  left: 16px; }
+.platform-android .action-sheet-wrapper {
+  width: 40%;
+  margin: auto; }
+
+
+
+.platform-android .action-sheet .button {
+    text-align: left;
+    font-size: 14px;
+    text-transform: uppercase; 
+    line-height: 41px;
+}
+.platform-android .action-sheet .action-sheet-title {
+    font-size: 14px;
+    padding: 16px;
+    color: #666; 
+}
+.platform-android .action-sheet-group {
+    margin: 0;
+    border-radius: 5px 5px 0px 0px;
+    background-color: #fafafa; }
+.platform-android .action-sheet-cancel {
+    display: none !important;
+    color: $assertive;
+}
+
+/*////////////////////////////  LOADING  /////////////////////////////////////////////////*/
+#loading.spinner svg {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:0;
+    left: 0;
+    margin: auto;
+}
+.loading img{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    right:0;
+    left: 0;
+    margin: auto;
+}
+.loading{
+    background-color: $light !important;
+    border-radius:80px !important;
+    width:80px;
+    height:80px;
+}
+.loading-container .loading h4{color:$dark;}
+.slider {
+  height: 100%;
+}
+
+.fixed-outside{
+      position: relative;
+  margin: auto;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;}
+
+.fixed-outside .button{
+    width: 28vw;
+    height: 35px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-weight: bolder;}
+.button-circle {
+    padding: 0px;
+    border-radius: 50% !important;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.progress-wrapper{
+  position: absolute;
+  top:0;
+  bottom:0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80px;
+  height: 80px;
+
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress{
+    position: absolute;
+    font-weight: 100;
+    font-size: 25px;
+    color: #bbb;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+
+    <!-- compiled css output -->
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script src="js/roundProgress.min.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+    <ion-nav-view></ion-nav-view>
+  </body>
+  <body ng-app="starter" ng-controller="AppCtrl">
+
+    <ion-pane >
+      <ion-content scroll="false" ng-click="setting()" >
+        <!--<div ng-repeat="img in images">
+          <img ng-src="{{img}}" width="100px">background-image="{{readURL(image)}}"
+        </div>-->
+        
+        <ion-slide-box does-continue="true"
+                      auto-play="true"
+                      slide-interval="3000"
+                      show-pager="true"
+                      on-slide-changed="slideHasChanged(index)" >
+                    <ion-slide id="image" ng-repeat="image in images">
+                      <img ng-src="{{readURL(image)}}" style="width:100%;height:100%;object-fit: cover;">
+                    </ion-slide>
+              </ion-slide-box>
+               <div ng-if="images.length<totalImages.length" class="progress-wrapper"><div class="progress animated infinite pulse" ng-class="images.length==totalImages.length?'calm':''">{{images.length}}/{{totalImages.length}}</div>
+               <round-progress
+                max="totalImages.length"
+                current="images.length"
+                color="#11c1f3"
+                bgcolor="#eaeaea"
+                radius="200"
+                semi="false"
+                rounded="true"
+                stroke="15"
+                clockwise="true"
+                responsive="true"
+                duration="800"
+                animation="linearEase"
+                offset="0"
+                animation-delay="0"
+                on-render="showPreciseCurrent">
+
+            </round-progress>
+               </div>
+      </ion-content>
+     
+    </ion-pane>
+  </body>
+</html>

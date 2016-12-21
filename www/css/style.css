@@ -1,0 +1,12 @@
+/* Empty. Add your own CSS if you like */
+.slider {
+  height: 100%;
+}
+
+#image{
+   
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
