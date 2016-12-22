@@ -1,4 +1,4 @@
-angular.module('starter', ['ionic','ngCordova','angular-svg-round-progressbar',])
+angular.module('starter', ['ionic','ngCordova','ngAnimate', 'angular-svg-round-progressbar',])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.registerBackButtonAction(function(e) {
@@ -35,12 +35,13 @@ angular.module('starter', ['ionic','ngCordova','angular-svg-round-progressbar',]
 
   $ionicPlatform.ready(function() {
     init();
-    $scope.$apply();
   });
     
   function init(){
-    $scope.images = FileService.images();
     $ionicHistory.clearCache();
+    $scope.images = FileService.images();
+    $ionicSlideBoxDelegate.update();
+    $ionicSlideBoxDelegate.start();
     var url = localStorage.getItem('slideURL');
     if(!url){
       config();
@@ -51,6 +52,12 @@ angular.module('starter', ['ionic','ngCordova','angular-svg-round-progressbar',]
           console.log(i);
           FileService.saveImage(i);
         });
+          $scope.$watchCollection('images', function(newNames, oldNames) {
+            if(newNames.length ==$scope.totalImages.length){
+              $ionicSlideBoxDelegate.update();
+              $ionicSlideBoxDelegate.start();
+            }
+          });
       });
     }  
   }
@@ -88,11 +95,7 @@ angular.module('starter', ['ionic','ngCordova','angular-svg-round-progressbar',]
       init();
     })
   }
-  $scope.$watchCollection('images', function(newNames, oldNames) {
-    if(newNames.length ==$scope.totalImages.length){
-      $ionicSlideBoxDelegate.update();
-    }$scope.images = FileService.images();
-  });
+
   $scope.setting = function(){
      $ionicActionSheet.show({
       buttons: [ { text: '<i class="icon ion-android-refresh"></i>Reset' }, { text: '<i class="icon ion-android-settings"></i>Setting' },],
